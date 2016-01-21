@@ -3,50 +3,63 @@
     <meta charset="utf-8">
     <title>A-Frame Slideshow: Sit 'n Spin</title>
     <meta name="description" content="A-Frame Slideshow: Sit 'n Spin">
-    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+    <script src="./js/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
       <a-sky color="grey"></a-sky>
 
-      <a-curvedimage id="slide0" theta-length="38" theta-start="-20" radius="23" height="9">
+      <a-curvedimage src="./images/1.jpg" id="slide0" src="" theta-length="38" theta-start="-20" radius="23" segments-radius="1" height="9">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide1" theta-length="38" theta-start="20" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="./images/1.jpg" id="slide1" theta-length="38" theta-start="20" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide2" theta-length="38" theta-start="60" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="./images/1.jpg" id="slide2" theta-length="38" theta-start="60" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide3" theta-length="38" theta-start="100" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="./images/1.jpg" id="slide3" theta-length="38" theta-start="100" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide4" theta-length="38" theta-start="140" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="./images/1.jpg" id="slide4" theta-length="38" theta-start="140" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide5" theta-length="38" theta-start="180" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="./images/1.jpg" id="slide5" theta-length="38" theta-start="180" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide6" theta-length="38" theta-start="220" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="./images/1.jpg" id="slide6" theta-length="38" theta-start="220" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide7" theta-length="38" theta-start="260" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="./images/1.jpg" id="slide7" theta-length="38" theta-start="260" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage id="slide7" theta-length="38" theta-start="300" radius="23" height="9" opacity="0.3">
-        <a-mouseenter opacity="1.0"></a-mouseenter>
-        <a-mouseleave opacity="0.3"></a-mouseleave>
+      <a-curvedimage src="./images/1.jpg" theta-length="38" theta-start="300" radius="23" height="9" opacity="0.3">
+        <!--<a-mouseenter opacity="1.0"></a-mouseenter>
+        <a-mouseleave opacity="0.3"></a-mouseleave>-->
       </a-curvedimage>
 
-      <a-camera fov="80" near="0.1" wasd-controls-enabled="false" cursor-visible="true" cursor-opacity=".3"></a-camera>
+      <a-camera fov="80" near="0.1" wasd-controls-enabled="true" cursor-visible="true" cursor-opacity=".3"></a-camera>
     </a-scene>
+    <script type="text/javascript">
+      document.querySelector('a-scene').addEventListener('loaded', function() {
+        var y = 0;
+        document.querySelector('[wasd-controls]').addEventListener('componentchanged', function(event) {
+          var rotation = document.querySelector('[wasd-controls]').getAttribute('rotation').y;
+          var roundDown = Math.floor(rotation);
+          if (roundDown !== y) {
+            y = roundDown;
+            console.log(roundDown);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
