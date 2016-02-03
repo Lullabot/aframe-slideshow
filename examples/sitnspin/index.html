@@ -49,7 +49,7 @@
       <a-camera fov="80" near="0.1" wasd-controls-enabled="true" cursor-visible="true" cursor-opacity=".3"></a-camera>
     </a-scene>
     <script type="text/javascript">
-      var slideMaxCount = 12;
+      var slideMaxCount = 13;
       var srcStartString = './images/slide';
       var srcEndString = '.png';
 
@@ -74,7 +74,7 @@
               if (increment) {
                 cycle++;
               }
-              else if (cycle > 0) {
+              else if (cycle > 0) { // don't decrement beyond zero
                 cycle--;
               }
             }
@@ -88,8 +88,9 @@
                 else {
                   slide--;
                 }
-                //console.log(srcStartString + (slide + 8) + srcEndString);
-                document.querySelector('#slide' + (slide - 1)).setAttribute('src', srcStartString + (slide + 8) + srcEndString);
+                if (slide + 8 <= slideMaxCount) {
+                  document.querySelector('#slide' + (slide/cycle - 1)).setAttribute('src', srcStartString + (slide + 8) + srcEndString);
+                }
                 padding = false;
               }
 
