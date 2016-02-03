@@ -13,35 +13,35 @@
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide1" theta-length="38" theta-start="20" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide1.png" id="slide1" theta-length="38" theta-start="20" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide2" theta-length="38" theta-start="60" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide2.png" id="slide2" theta-length="38" theta-start="60" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide3" theta-length="38" theta-start="100" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide3.png" id="slide3" theta-length="38" theta-start="100" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide4" theta-length="38" theta-start="140" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide4.png" id="slide4" theta-length="38" theta-start="140" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide5" theta-length="38" theta-start="180" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide5.png" id="slide5" theta-length="38" theta-start="180" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide6" theta-length="38" theta-start="220" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide6.png" id="slide6" theta-length="38" theta-start="220" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide7" theta-length="38" theta-start="260" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide7.png" id="slide7" theta-length="38" theta-start="260" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
-      <a-curvedimage src="./images/1.jpg" id="slide8" theta-length="38" theta-start="300" radius="23" height="9" opacity="0.3">
+      <a-curvedimage src="https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide8.png" id="slide8" theta-length="38" theta-start="300" radius="23" height="9" opacity="0.3">
         <a-mouseenter opacity="1.0"></a-mouseenter>
         <a-mouseleave opacity="0.3"></a-mouseleave>
       </a-curvedimage>
@@ -49,6 +49,10 @@
       <a-camera fov="80" near="0.1" wasd-controls-enabled="true" cursor-visible="true" cursor-opacity=".3"></a-camera>
     </a-scene>
     <script type="text/javascript">
+      var slideMaxCount = 12;
+      var srcStartString = 'https://raw.githubusercontent.com/Lullabot/aframe-slideshow/master/examples/sitnspin/images/slide';
+      var srcEndString = '.png';
+
       document.querySelector('a-scene').addEventListener('loaded', function() {
         var y = 0;
         document.querySelector('[wasd-controls]').addEventListener('componentchanged', function(event) {
