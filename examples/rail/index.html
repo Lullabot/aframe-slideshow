@@ -1,8 +1,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>A-Frame Slideshow: Sit 'n Spin</title>
-    <meta name="description" content="A-Frame Slideshow: Sit 'n Spin">
+    <title>A-Frame Slideshow: Rail</title>
+    <meta name="description" content="A-Frame Slideshow: Rail">
     <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
   </head>
   <body>
@@ -19,20 +19,19 @@
       </a-camera>
 
       <!-- Orange cube -->
-      <a-plane position="0 2 -6" width="2" depth="2" height="2" color="#F16745" roughness="0.8">
-        <a-mouseenter scale="1.2 1.2 1.2" color="#FFC65D"></a-mouseenter>
-        <a-mouseleave scale="1 1 1" color="#F16745"></a-mouseleave>
+      <a-plane position="0 6 -10" width="2" depth="2" height="2" color="#F16745" roughness="0.8">
+        <a-mouseenter scale="1.2 1.2 1.2" color="#FFC65D" opacity="1.0"></a-mouseenter>
+        <a-mouseleave scale="1 1 1" color="#F16745" opacity="0.5"></a-mouseleave>
       </a-plane>
 
-      <a-plane position="0 2 -4" width="2" depth="2" height="2" color="#F16745" roughness="0.8">
-        <a-mouseenter scale="1.2 1.2 1.2" color="#FFC65D"></a-mouseenter>
-        <a-mouseleave scale="1 1 1" color="#F16745"></a-mouseleave>
+      <a-plane position="0 4 -6" width="2" depth="2" height="2" color="#F16745" roughness="0.8">
+        <a-mouseenter scale="1.2 1.2 1.2" color="#FFC65D" opacity="1.0"></a-mouseenter>
+        <a-mouseleave scale="1 1 1" color="#F16745" opacity="0.5"></a-mouseleave>
       </a-plane>
 
       <a-plane position="0 2 -2" width="2" depth="2" height="2" color="#F16745" roughness="0.8">
-        <a-mouseenter scale="1.2 1.2 1.2" color="#FFC65D"></a-mouseenter>
-        <a-mouseleave scale="1 1 1" color="#F16745"></a-mouseleave>
-        <a-animation attribute="opacity" from="1.0" to="0.5" dur="10000"></a-animation>
+        <a-mouseenter scale="1.2 1.2 1.2" color="#FFC65D" opacity="1.0"></a-mouseenter>
+        <a-mouseleave scale="1 1 1" color="#F16745" opacity="0.5"></a-mouseleave>
       </a-plane>
 
     </a-scene>
@@ -42,6 +41,8 @@
         console.log('loaded');
 
         document.querySelector('[wasd-controls]').addEventListener('componentchanged', function() {
+
+          // when we get within one unit of the slide start to fade it
           // console.log(arguments);
           console.log(document.querySelector('[wasd-controls]').getAttribute('position').z);
         });
