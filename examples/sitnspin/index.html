@@ -4,9 +4,9 @@
     <title>A-Frame Slideshow: Sit 'n Spin</title>
     <meta name="description" content="A-Frame Slideshow: Sit 'n Spin">
     <!-- Latest version has an error but cardboard mode does work -->
-    <!--<script src="https://aframe.io/releases/latest/aframe.min.js"></script>-->
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
      <!-- This version fixes segmentRadius error but switching into cardboard mode doesn't work anymore. -->
-    <script src="./js/aframe.min.js"></script>
+    <!--<script src="./js/aframe.min.js"></script>-->
   </head>
   <body>
     <a-scene>
@@ -101,6 +101,17 @@
                 padding = true;
               }
             }
+            /*else if (cycle == 0 && increment !== true) {
+              if (slide >= 8 && padding == true) {
+                slide--;
+                document.querySelector('#slide' + (slide/cycle - 1)).setAttribute('src', srcStartString + (slide + 8) + srcEndString);
+                padding = false;
+              }
+
+              if (segment !== -43) {
+                padding = true;
+              }
+            }*/
           }
         });
       });
